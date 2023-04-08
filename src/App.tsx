@@ -50,6 +50,16 @@ function App() {
     }
   };
 
+  const handleDelete = (id: number) => {
+    return (e: React.MouseEvent) => {
+      e.preventDefault();
+
+      setTodos(todos.filter((_todo: Types["todo"]) => _todo.id !== id));
+
+      toast.success(`Todo id: ${id} deleted!`);
+    };
+  };
+
   return (
     <div className='h-screen'>
       <form className='flex flex-col gap-4' onSubmit={submitForm}>
@@ -106,7 +116,9 @@ function App() {
                   <Label htmlFor='completed'>Completed</Label>
                 </div>
 
-                <div className='flex items-center cursor-pointer'>
+                <div
+                  className='flex items-center cursor-pointer'
+                  onClick={handleDelete(todo.id)}>
                   <MdDelete color='red' />
                 </div>
               </div>
