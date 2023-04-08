@@ -33,9 +33,8 @@ function App() {
   });
 
   return (
-    <div className='h-screen'>
+    <div className='h-screen max-w-full lg:max-w-lg mx-auto'>
       <Form todo={todo} setTodo={setTodo} todos={todos} setTodos={setTodos} />
-
       <Todolist todos={todos} setTodos={setTodos} />
     </div>
   );

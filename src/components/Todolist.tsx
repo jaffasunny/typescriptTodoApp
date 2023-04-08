@@ -20,7 +20,7 @@ const Todolist: React.FC<IProps> = ({ todos, setTodos }) => {
     <div className='border-yellow-600 border-4 rounded-lg mt-2 h-4/6'>
       {todos?.map((todo) => (
         <div className='bg-green-200 p-3 -z-1' key={todo.id}>
-          <div className='flex items-center justify-between max-w-full lg:max-w-lg'>
+          <div className='flex items-center justify-between'>
             <span
               className={`text-lg font-medium text-gray-900 ${
                 todo.completed && "line-through"
